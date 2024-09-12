@@ -1,3 +1,4 @@
+
 ######################################################################
 # Copyright 2016, 2022 John J. Rofrano. All Rights Reserved.
 #
@@ -31,7 +32,8 @@ def init_logging(app, logger_name: str):
     app.logger.setLevel(gunicorn_logger.level)
     # Make all log formats consistent
     formatter = logging.Formatter(
-        "[%(asctime)s][%(levelname)s][%(module)s] %(message)s", "%Y-%m-%d%H:%M:%S%z"
+        "[%(asctime)s][%(levelname)s][%(module)s] %(message)s", 
+        "%Y-%m-%d%H:%M:%S%z"
     )
     for handler in app.logger.handlers:
         handler.setFormatter(formatter)
